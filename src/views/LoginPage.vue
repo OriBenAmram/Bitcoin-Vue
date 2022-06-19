@@ -38,8 +38,8 @@ export default {
         }
     },
     methods: {
-        async onSignup() {
-            await userService.signup(this.user)
+        onSignup() {
+            userService.signup(this.user)
             this.$router.push('/')
         }
     },

@@ -1,19 +1,17 @@
-
-
+import { saveToStorage, loadFromStorage } from "./storage.service";
+import { utilService } from "./util.service";
 export const userService = { 
     getUser, 
     signup
 }
 
-// _createUsers()
-
 function getUser() { 
-    return 'Guest'
+    const user = loadFromStorage('loggedInUser')
+    return user
 }
 
 function signup(user) { 
-    user.coints = 100
-    console.log('user:', user);
+    user.coins = 100
+    user.id = utilService.makeId()
+    saveToStorage('loggedInUser', user)
 }
-
-// await userService.signup({fullname: 'Ori Bori', username: 'ori', password:'123', coins: 10000})
