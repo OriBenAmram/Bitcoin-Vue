@@ -1,0 +1,15 @@
+.conatct-preview-container { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 2em;
+    background-color: whitesmoke;
+    padding: 15px;
+    margin-bottom: 10px;
+
+    .user-avatar { 
+        width: 50px;
+    }
+}
