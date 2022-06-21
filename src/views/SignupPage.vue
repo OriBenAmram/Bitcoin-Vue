@@ -30,7 +30,7 @@ export default {
             }
             this.$store.dispatch({ type: 'signup', username: this.username})
             // userService.signup(this.username)
-            this.$router.push('/')
+            this.$router.push('/home')
         }
     },
     computed: {

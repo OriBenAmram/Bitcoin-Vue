@@ -9,11 +9,11 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       component: HomePage
     },
     {
-      path: '/signup',
+      path: '/',
       component: SignupPage
     },
     {

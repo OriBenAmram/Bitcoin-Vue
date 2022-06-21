@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         onRedirect() {
-            this.$router.push('/signup')
+            this.$router.push('/')
         }
     },
     computed: {

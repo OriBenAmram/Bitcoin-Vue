@@ -6,6 +6,7 @@
         <button @click="back">Back</button>
         <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link>
         <button @click="removeContact(contact._id)">Delete</button>
+        <!-- <transfer-fund /> -->
     </div>
     <p v-else>Loading...</p>
 </template>
@@ -32,6 +33,9 @@ export default {
     async created() {
         const _id = this.$route.params._id
         this.contact = await contactService.getContactById(_id)
+    },
+    components: {
+        // TransferFund
     }
 }
 </script>
