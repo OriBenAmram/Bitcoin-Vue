@@ -4,8 +4,8 @@
             <contact-preview :contact="contact" />
             <section class="actions">
                 <router-link :to="`/contact/${contact._id}`">Details</router-link>
-                <!-- <RouterLink :to="`/contact/edit/${contact._id}`">Edit</RouterLink> -->
-                <button @click="removeContact(contact.id)">x</button>
+                <!-- <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link> -->
+                <button @click="removeContact(contact._id)">x</button>
             </section>
         </article>
     </section>

@@ -1,7 +1,8 @@
 <template>
-    <div class="contact-page" >
+    <div class="contact-page">
         <h1>Contacts</h1>
-        <ContactFilter @filter="onFilter"/>
+        <ContactFilter @filter="onFilter" />
+        <router-link to="/contact/edit">Add a new contact</router-link>
         <ContactList @remove-contact="removeContact" :contacts="contactsToShow" />
     </div>
 </template>
@@ -14,14 +15,14 @@ import ContactFilter from '../components/ContactFilter.vue'
 export default {
     data() {
         return {
-            contacts: [],
-            filterBy: ''
+            filterBy: { name: '' }
         }
     },
     methods: {
         async removeContact(contactId) {
-            await contactService.removeContact(contactId)
-            this.contacts = this.contacts.filter(contact => contact._id !== contactId)
+            // await contactService.removeContact(contactId)
+            // this.contacts = this.contacts.filter(contact => contact._id !== contactId)
+            await this.$store.dispatch({ type: 'removeContact', contactId })
         },
         onFilter(filterBy) {
             this.filterBy = filterBy
@@ -29,15 +30,16 @@ export default {
     },
     computed: {
         contactsToShow() {
-            console.log('this.contacts:', this.contacts);
-            
-            return this.contacts
-            // const regex = new RegExp(this.filterBy.txt, 'i')
-            // return this.contacts.filter(contact => regex.test(contact.name))
+            const regex = new RegExp(this.filterBy.name, 'i')
+            return this.contacts.filter(contact => regex.test(contact.name))
+        },
+        contacts() {
+            return this.$store.getters.contacts
         }
     },
     async created() {
-        this.contacts = await contactService.getContacts()
+        // this.contacts = await contactService.getContacts()
+        this.$store.dispatch({ type: 'loadContacts' })
     },
     components: {
         ContactList,
