@@ -1,13 +1,16 @@
 import { userService } from "../../services/user.service";
 export default {
     state: {
-        user: null,
+        user: userService.getUser() || null,
     },
     mutations: {
         setUser(state, { user }) {
+            console.log('user', user)
+            console.log('im here');
             state.user = user
         },
         addMove(state, { move }) {
+            console.log('user', state.user)
             state.user.moves.push(move);
         },
         signout(state) {
@@ -19,8 +22,8 @@ export default {
             const user = await userService.signup(username);
             commit({ type: 'setUser', user });
         },
-        async onAddMove({ commit }, { move }) {
-            commit({ type: 'addMove', move });
+        async onAddMove({ commit }, { user }) {
+            commit({ type: 'setUser', user });
         },
         async signout({ commit }) {
             commit({ type: 'signout' });
