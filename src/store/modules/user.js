@@ -1,7 +1,7 @@
 import { userService } from "../../services/user.service";
 export default {
     state: {
-        user: userService.getUser() || null,
+        user: null,
     },
     mutations: {
         setUser(state, { user }) {
