@@ -1,7 +1,8 @@
 <template>
     <img class="user-avatar" :src="getAvatar(contact._id)" />
     <div class="contact-preview-details">
-        <h2>{{ contact.name }}</h2>
+        <h2 class="contact-name">{{ contact.name }}</h2>
+        <p class="contact-email">{{ contact.email }}</p>
     </div>
 </template>
 

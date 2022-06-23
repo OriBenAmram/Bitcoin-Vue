@@ -1,16 +1,20 @@
 <template>
-    <div class="contact-page">
-        <h1>Contacts</h1>
-        <ContactFilter @filter="onFilter" />
-        <router-link to="/contact/edit">Add a new contact</router-link>
-        <ContactList @remove-contact="removeContact" :contacts="contactsToShow" />
+    <div class="contact-page main-layout">
+        <section class="contact-content">
+            <div class="contact-description">
+                <ContactFilter @filter="onFilter" />
+                <ContactOptions />
+            </div>
+            <ContactList @remove-contact="removeContact" :contacts="contactsToShow" />
+        </section>
     </div>
 </template>
 
 <script>
-import contactService from '@/services/contact.service.js'
+import ContactHeader from '../components/ContactHeader.vue'
 import ContactList from '../components/ContactList.vue'
 import ContactFilter from '../components/ContactFilter.vue'
+import ContactOptions from '../components/ContactOptions.vue'
 
 export default {
     data() {
@@ -42,8 +46,10 @@ export default {
         this.$store.dispatch({ type: 'loadContacts' })
     },
     components: {
+        ContactHeader,
         ContactList,
-        ContactFilter
+        ContactFilter,
+        ContactOptions
     }
 }
 </script>

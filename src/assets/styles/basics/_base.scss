@@ -13,8 +13,11 @@ html {
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-x: hidden;
+    background-color: #0b1426;
+    color: white;
 }
 
 .root-cmp {
@@ -36,14 +39,18 @@ h6 {
     line-height: 1.2;
     margin: 0 0 em(20px, 50px);
     font-weight: 400;
+    font-family: BlinkMacSystemFont, -apple-system, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans, droid sans,
+        helvetica neue, helvetica, arial, sans-serif;
 }
 
 h1 {
-    font-size: rem(50px);
+    font-weight: 600;
+    font-size: rem(29px);
 }
 
 p {
     max-width: 50ch;
+    font-size: 16px;
 }
 
 a {

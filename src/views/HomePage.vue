@@ -1,6 +1,7 @@
 <template>
         <div v-if="user?.name" class="home-page">
             <h1>Hi, {{ user.name }}!</h1>
+            <button class="primary-btn">Get started!</button>
             <div v-if="user" class="user-info">
                 <h3>Current Balance</h3>
                 <p>
@@ -18,13 +19,13 @@
             </div>
         </div>
         <div v-else class="user-redirect">
-            <button @click="onRedirect">Please enter your name first</button>
+            <h1>Welcome, please sign up first</h1>
+            <button class="primary-btn" @click="onRedirect">Get started</button>
         </div>
 </template>
 
 <script>
 import { bitcoinService } from "@/services/bitcoin.service.js"
-import { userService } from "@/services/user.service.js"
 export default {
     data() {
         return {
@@ -34,7 +35,7 @@ export default {
     },
     methods: {
         onRedirect() {
-            this.$router.push('/')
+            this.$router.push('/signup')
         }
     },
     computed: {

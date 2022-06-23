@@ -1,33 +1,52 @@
 .app-header {
-    background-color: #212427;
-    color: whitesmoke;
+    background-color: #0b1426;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
 
-    @include for-narrow-layout {
-        height: 80px;
+    &.isSignupPage {
+        position: fixed;
+        width: 100%;
+
+        .hamburger-btn {
+            display: none;
+        }
+
+        @include for-wide-layout {
+            width: 580px;
+        }
+
+        .nav-links {
+            display: none;
+        }
     }
 
     .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 16px 30px;
+        width: 100%;
     }
     // LOGO
     .logo {
-        color: whitesmoke;
+        color: rgb(187, 187, 187);
         // font-family: caveat, serif;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
 
         @include for-narrow-layout {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
+        }
+
+        &.disable {
+            pointer-events: none;
         }
     }
 
     .logo.router-link-active {
-        color: whitesmoke;
+        color: rgb(187, 187, 187);
     }
     .nav-container {
         display: flex;
@@ -38,7 +57,7 @@
     .nav-links {
         display: flex;
         position: fixed;
-        background-color: #212427;
+        background-color: #0b1426;
         flex-direction: column;
         height: 100vh;
         top: 0;
@@ -49,6 +68,7 @@
         &.open {
             box-shadow: 0px 0px 30px rgb(0 0 0 / 30%);
             transform: translateX(0);
+            display: flex;
         }
         li {
             text-align: center;
@@ -64,23 +84,38 @@
         @include for-normal-layout {
             position: static;
             flex-direction: row;
+            align-items: center;
             height: inherit;
             width: inherit;
             transform: translateX(0);
-            >* {
+            > * {
                 margin-right: 30px;
             }
-            li {
-                text-align: center;
-                padding: 0px;
-                border: none;
-                &:hover {
-                    background-color: inherit;
+            a {
+                li {
+                    text-align: center;
+                    padding: 0px;
+                    border: none;
+                    &:hover {
+                        background-color: inherit;
+                    }
+                }
+                &:last-of-type {
+                    padding-left: 30px;
+                    position: relative;
+                    ::before {
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                        content: "";
+                        border-left: 1px solid rgb(98, 105, 115);
+                        height: 22px;
+                    }
                 }
             }
         }
     }
-    .nav-links>* {
+    .nav-links > * {
         color: whitesmoke;
         font-size: 0.9rem;
         @include for-narrow-layout {
@@ -88,9 +123,9 @@
         }
     }
     a.router-link-active {
-        color: #e63579;
+        color: #1199fa;
     }
-   
+
     // Hamburger-btn
     .hamburger-btn {
         background-color: transparent;
@@ -103,7 +138,7 @@
         &:hover {
             // background-color: #33373cfa;
         }
-        
+
         @include for-normal-layout {
             display: none;
         }

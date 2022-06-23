@@ -1,18 +1,67 @@
-.signup-page { 
+.signup-page {
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+    height: 100vh;
+    // Signup form
 
-    .signup-form { 
-        width: rem(450px);
-        margin-top: 50px;
+    .signup-info {
+        margin: 114px 80px;
+        width: 100%;
+        box-sizing: unset;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
-        >* { 
-            margin-bottom: 20px;
+        @include for-wide-layout { 
+            margin: 114px 132px;
+        }
+
+        .small-link {
+            all: unset;
+            color: rgb(17, 153, 250);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 57px;
+            margin: rem(16px) 0;
+        }
+
+        .signup-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @include for-wide-layout { 
+                width: 582px;
+            }
+
+            input {
+                margin-bottom: rem(26px);
+            }
+
+            label {
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+
+            .primary-btn { 
+                padding: 13px;
+            }
+        }
+    }
+
+    // Signup img
+    .signup-background-img {
+        display: none;
+        @include for-wide-layout {
+            display: block; 
+            flex-grow: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
         }
     }
 }

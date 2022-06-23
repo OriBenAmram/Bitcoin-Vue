@@ -1,6 +1,18 @@
 <template>
     <section class="contact-filter">
-        <input @input="filter" ref="filter" v-model="filterBy.name" type="text" />
+        <h1 class="filter-header">
+            <span>Filter or sort</span> your friends by their names or phone numbers!
+        </h1>
+        <div class="gradient-border"></div>
+
+        <p>Don't stay with any open checks....</p>
+        <input
+            @input="filter"
+            ref="filter"
+            v-model="filterBy.name"
+            type="text"
+            placeholder="Search by name and phone number"
+        />
     </section>
 </template>
 
@@ -22,11 +34,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss">
-.contact-filter {
-    background-color: rgb(59, 102, 131);
-    color: beige;
-    padding: 10px;
-}
-</style>

@@ -24,8 +24,6 @@ export default {
             this.$router.push('/contact')
         },
         async removeContact(contactId) {
-            console.log('contactId:', contactId);
-            
             await this.$store.dispatch({ type: 'removeContact', contactId })
             this.$router.push('/contact')
         }

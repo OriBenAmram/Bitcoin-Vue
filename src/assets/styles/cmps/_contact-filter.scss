@@ -1,0 +1,24 @@
+.contact-filter {
+    margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+
+    .filter-header { 
+        span { 
+            color: rgb(147, 210, 253);;
+        }
+    }
+
+    input {
+        height: 51px;
+        padding: 13px 16px;
+        border: 1px solid #e3e3e3;
+        box-sizing: border-box;
+        border-radius: 4px;
+        line-height: 1.15;
+        width: 100%;
+    }
+
+    
+    
+}

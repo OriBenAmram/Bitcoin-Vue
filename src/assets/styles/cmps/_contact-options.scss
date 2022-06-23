@@ -1,0 +1,19 @@
+.contacts-options {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+
+    > * {
+        margin-bottom: 26px;
+    }
+
+    width: 40%;
+}
+
+.active-contact-triggers {
+    display: flex;
+    flex-direction: row;
+    .primary-btn {
+        margin-right: 16px;
+    }
+}

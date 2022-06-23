@@ -1,15 +1,35 @@
-.conatct-preview-container { 
+.conatct-preview-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-radius: 2em;
-    background-color: whitesmoke;
-    padding: 15px;
+    border-radius: 4px;
+    padding: 5px 10px 10px;
     margin-bottom: 10px;
+    cursor: pointer;
+    color: white;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
 
-    .user-avatar { 
+
+    .user-avatar {
         width: 50px;
+        margin-right: 16px;
+        border-radius: 50%;
     }
+    .contact-preview-details { 
+        .contact-name {
+            font-size: 20px;
+            margin: 0;
+        }
+        .contact-email {
+            margin: 0;
+            font-size: 14px;
+            color: rgb(186, 186, 186);
+        }
+    }
+
+
+
+  
 }
