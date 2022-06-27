@@ -1,11 +1,10 @@
 <template>
     <section class="contact-filter">
         <h1 class="filter-header">
-            <span>Filter or sort</span> your friends by their names or phone numbers!
+            <span>Filter your friends</span>  by their names or phone numbers!
         </h1>
         <div class="gradient-border"></div>
-
-        <p>Don't stay with any open checks....</p>
+        <p class="input-trigger">Don't stay with any open checks....</p>
         <input
             @input="filter"
             ref="filter"
