@@ -1,7 +1,7 @@
 <template>
     <section class="contact-filter">
         <h1 class="filter-header">
-            <span>Filter your friends</span>  by their names or phone numbers!
+            <span>Filter your friends</span>  by <br>  their names or phone numbers!
         </h1>
         <div class="gradient-border"></div>
         <p class="input-trigger">Don't stay with any open checks....</p>

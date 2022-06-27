@@ -12,8 +12,11 @@ const STORAGE_KEY = 'usersDB'
 
 function getUser() {
     const users = loadFromStorage('usersDB')
-    return users[0]
+    if (users) {
+        return users[0]
+    } else return null
 }
+
 
 function addMove(contact, amount) {
     let users = loadFromStorage(STORAGE_KEY)

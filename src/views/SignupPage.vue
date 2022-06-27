@@ -14,7 +14,7 @@
           placeholder="Enter your username"
           class="secondary-input"
         />
-        <button class="primary-btn-signup">Create an account</button>
+        <button class="primary-btn">Create an account</button>
       </form>
     </section>
     <img
