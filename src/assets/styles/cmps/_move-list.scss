@@ -1,0 +1,36 @@
+.move-list { 
+    width: 100%;
+    padding: 20px;
+    // In case there are no transfers - h2
+    .no-moves-header { 
+       color: rgb(147, 210, 253); 
+    }
+
+    .move-preview { 
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+
+        .time-description { 
+            margin: 0 ;
+            font-size: rem(14px);
+            color: #75839f;
+        }
+        
+        .move-to { 
+            margin: 0 0 10px;
+            font-size: rem(18px);
+        }
+
+        .move-amount { 
+
+            span { 
+
+            }
+        }
+
+        h3 { 
+            span { 
+
+            }
+        }
+    }
+}

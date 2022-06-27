@@ -1,18 +1,18 @@
 <template>
-  <ul class="move-list" v-if="getMoves.length > 0">
+  <ul class="move-list clean-list" v-if="getMoves.length > 0">
     <li v-for="move in getMoves" :key="move.at">
-      <div class="move-preview flex column">
+      <div class="move-preview ">
+        <p class="time-description">{{ getTime(move.at) }}</p>
         <h2 v-if="!title" class="move-to">To {{ move.to }}</h2>
         <h2 class="move-amount">
           {{ formatToCurrency(move.amount, "BTC") }} |
           <span>{{ formatToCurrency((1 / rate) * move.amount) }}</span>
         </h2>
         <h3>status: <span>approve</span></h3>
-        <p>{{ getTime(move.at) }}</p>
       </div>
     </li>
   </ul>
-  <h2 v-else>No Transfers have been made yet</h2>
+  <h2 v-else class="no-moves-header">No Transfers have been made yet</h2>
 </template>
 <script>
 import { userService } from "../services/user.service";
