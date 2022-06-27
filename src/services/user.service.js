@@ -43,13 +43,15 @@ function signup(name) {
             "_id": "5a56640269f443a5d64b672hs",
             "name": "Ori Ben Amram",
             "email": "ori.bitcoin@gmail.com",
-            "phone": "+1 (968) 289-3824"
+            "phone": "+1 (968) 289-3824",
+            "status": "approved",
         }, 50000),
         _createMove({
             "_id": "5a56640269f443a5d64b46cz",
             "name": "Daniel Shaked",
             "email": "daniel.bitcoin@gmail.com",
-            "phone": "+1 (968) 982-3824"
+            "phone": "+1 (968) 982-3824",
+            "status": "pedding",
         }, 55000)]
     }
     gUsers.unshift(user)
@@ -59,11 +61,12 @@ function signup(name) {
 
 
 
-function _createMove(contact, amount) {
+function _createMove(contact, amount, status) {
     return {
         toId: contact._id,
         to: contact.name,
         at: Date.now(),
         amount,
+        status
     }
 }

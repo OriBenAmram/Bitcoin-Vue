@@ -1,35 +1,52 @@
-.move-list { 
+.move-list {
     width: 100%;
     padding: 20px;
     // In case there are no transfers - h2
-    .no-moves-header { 
-       color: rgb(147, 210, 253); 
+    .no-moves-header {
+        color: rgb(147, 210, 253);
     }
 
-    .move-preview { 
+    .move-preview {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+        margin-bottom: 10px;
+        height: 80px;
 
-        .time-description { 
-            margin: 0 ;
+        .time-description {
+            margin: 0;
             font-size: rem(14px);
             color: #75839f;
         }
-        
-        .move-to { 
+
+        .move-to {
             margin: 0 0 10px;
             font-size: rem(18px);
         }
 
-        .move-amount { 
+        .btn-value {
+            color: rgb(147, 210, 253);
+            margin: 0;
+            padding-bottom: 5px;
+        }
 
-            span { 
-
+        .move-amount {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: inherit;
+            p {
+                margin: 0;
+                color: #75839f;
             }
         }
 
-        h3 { 
-            span { 
-
+        h3 {
+            font-size: 14px;
+            span {
+                color: rgb(124, 192, 124);
             }
         }
     }

@@ -96,6 +96,13 @@
             padding: 0 20px;
         }
 
+        .move-list-container { 
+            .move-list-header { 
+                padding: 20px 20px 0;
+                margin: 0;
+            }
+        }
+
         .user-chart {
             height: 100%;
             width: 50%;
@@ -105,7 +112,7 @@
             padding: 20px;
             display: none;
 
-            @include for-narrow-layout {
+            @include for-wide-layout {
                 display: block;
             }
         }

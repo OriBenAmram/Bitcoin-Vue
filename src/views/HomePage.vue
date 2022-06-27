@@ -37,6 +37,7 @@
           </button>
         </div>
         <div class="move-list-container">
+          <h2 class="move-list-header">Your transitions</h2>
           <MoveList :moves="getUser.user.moves" />
         </div>
       </div>
