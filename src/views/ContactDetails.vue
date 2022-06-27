@@ -1,17 +1,34 @@
 <template>
-  <div v-if="contact" class="contact-details-container">
-    <h2>{{ contact.name }}</h2>
-    <h3>{{ contact.phone }}</h3>
-    <h3>{{ contact.email }}</h3>
-    <button @click="back">Back</button>
-    <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link>
-    <button @click="removeContact(contact._id)">Delete</button>
-    <transfer-fund v-if="contact" :contact="contact" />
-    <div class="user-list">
-      <move-list :title="contact._id" :moves="getUser.user.moves" />
+  <div v-if="contact" class="contact-details-page main-layout">
+    <div class="contact-content">
+      <div class="contact-image"></div>
+      <section class="contact-info">
+        <div class="info-header">
+          <button class="small-link" @click="back">Back</button>
+          <h3 class="contact-phone">{{ contact.phone }}</h3>
+        </div>
+        <!-- Name and mail -->
+        <div class="contact-shallow-details">
+          <h2 class="contact-name">{{ contact.name }}</h2>
+          <h3 class="contact-email">{{ contact.email }}</h3>
+        </div>
+        <!-- Modal for transfer -->
+        <section class="transfer-modal">
+          <transfer-fund v-if="contact" :contact="contact" />
+        </section>
+        <!-- Buttons -->
+        <div class="contact-options">
+          <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link>
+          <button @click="removeContact(contact._id)">Delete</button>
+        </div>
+      </section>
+      <section class="details-moves">
+        Contact moves
+        <!-- <move-list :title="contact._id" :moves="getUser.user.moves" /> -->
+      </section>
     </div>
   </div>
-  <p v-else>Loading...</p>
+  <p v-else>Loading...!</p>
 </template>
 
 <script>
@@ -27,11 +44,8 @@ export default {
   computed: {
     getUser() {
       let loggedInUser = this.$store.state.user;
-      console.log("loggedInUser: ", loggedInUser);
       if (!loggedInUser) router.push({ path: `/signup` });
       else {
-        console.log("else!!!!!!!!!!!!!!!!!!");
-        console.log("loggedInUser", loggedInUser.user);
         return loggedInUser;
       }
     }

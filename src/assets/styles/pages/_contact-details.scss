@@ -1,0 +1,54 @@
+.contact-details-page {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .contact-content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        // background-color: pink;
+
+        .contact-image {
+            width: 350px;
+            height: 350px;
+            background-color: green;
+            margin-right: 50px;
+        }
+        .contact-info {
+            flex: 1;
+            padding: 0px 10px;
+            .info-header { 
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+                width: 100%;
+            }
+            .small-link {
+                margin-bottom: 26px;
+            }
+
+            .contact-name { 
+                font-size: 24px;
+            }
+
+            .contact-phone { 
+                font-size: 14px;
+                color: rgb(210, 210, 210);
+            }
+
+            .contact-email { 
+                font-size: 16px;
+                color: rgb(210, 210, 210);
+            }
+        }
+
+        
+    }
+
+    .details-moves { 
+        background-color: pink;
+        width: 400px;  
+    }
+}

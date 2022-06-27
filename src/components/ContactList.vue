@@ -1,12 +1,7 @@
 <template>
     <section class="contact-list-container" v-if="contacts.length">
-        <article v-for="contact in contacts" :key="contact._id" class="conatct-preview-container">
+        <article v-for="contact in contacts" :key="contact._id" class="conatct-preview-container" @click="onClickContact(contact._id)">
             <contact-preview :contact="contact" />
-            <!-- <section class="actions">
-                <router-link :to="`/contact/${contact._id}`">Details</router-link> -->
-                <!-- <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link> -->
-                <!-- <button @click="removeContact(contact._id)">x</button>
-            </section> -->
         </article>
     </section>
     <article v-else>
@@ -24,16 +19,12 @@ export default {
             }
         },
     methods: {
-        removeContact(contactId) {
-            this.$emit('remove-contact', contactId)
+        // removeContact(contactId) {
+        //     this.$emit('remove-contact', contactId)
+        // },
+        onClickContact(contactId) {
+            this.$router.push(`/contact/${contactId}`)
         }
-    },
-
-    computed: {
-
-    },
-    async created() {
-
     },
     components: {
         ContactPreview
