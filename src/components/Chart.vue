@@ -1,5 +1,5 @@
 <template>
-  <Bar class="chart" :chart-data="chartData" />
+  <Bar class="chart" :chart-data="chartData" height="400px" />
 </template>
 
 <script>
@@ -40,7 +40,8 @@ export default {
         datasets: [
           {
             label: this.coinData.name,
-            backgroundColor: "#333",
+            backgroundColor: "gold",
+
             data: this.coinData.values.map((value) => value.y),
           },
         ],
