@@ -4,7 +4,7 @@ import { utilService } from "./util.service";
 export const userService = {
     getUser,
     signup,
-    addMove
+    addMove,
 }
 
 const gUsers = []
