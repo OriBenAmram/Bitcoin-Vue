@@ -16,6 +16,9 @@
     &.align-center {
         align-items: center;
     }
+    &.align-end {
+        align-items: end;
+    }
     &.wrap {
         flex-wrap: wrap;
     }
@@ -144,4 +147,41 @@ input {
     background: linear-gradient(90deg,#1199fa,#11d0fa);
     border-radius: 10px;
     border: 2px solid #ffffff;
+}
+
+// Spans
+.grey-text { 
+    color: #75839f;
+}
+
+.light-text { 
+    color: rgb(147, 210, 253);
+}
+
+.small { 
+    font-size: 10px;
+}
+
+// Description button
+
+.describe-btn { 
+    background: linear-gradient(90deg,#1199fa,#11d0fa);
+    color: white;
+    border-radius: 4px;
+    line-height: 22px;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+
+    &.round { 
+        font-weight: 700;
+        border-radius: 2em;
+    }
+
+    &.small { 
+        font-size: 10px;
+        height: 30px;
+        padding: 4px 12px;
+    }
 }

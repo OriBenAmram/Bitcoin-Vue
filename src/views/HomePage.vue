@@ -1,28 +1,48 @@
 <template>
   <div v-if="user?.name" class="home-page">
-    <h1>Hi, {{ user.name }}!</h1>
-    <div v-if="user" class="user-info">
-      <h3>Current Balance</h3>
-      <p>
-        USD:
-        <span>${{ user.coins }}</span>
-      </p>
-      <p>
-        Bitcoin:
-        <span>${{ userBit }}</span>
-      </p>
-      <p>
-        Current 1 USD in Bitcoin:
-        <span>{{ rate }}</span>
-      </p>
+    <div class="home-header">
+      <h1 class="home-title">Hi {{ user.name }}, it's good to see you</h1>
+      <h2 class="header-sub-title">Manage, transfer and keep being updated</h2>
+    </div>
+    <div v-if="user" class="user-info-modal">
+      <div class="user-info">
+        <div class="dry-details">
+          <div class="user-balance">
+            <h3 class="user-title">{{ user.name }}'s balance</h3>
+            <div>
+              <p>
+                USD:
+                <span class="grey-text">${{ user.coins }}</span>
+              </p>
+              <p>
+                Bitcoin:
+                <span class="light-text">${{ userBit }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="btc-value">
+            <p class="grey-text">Current BTC USD:</p>
+            <div class="flex column">
+              <div class="flex">
+                <span class="describe-btn round small">live</span>
+                <h2>${{ rate }}</h2>
+              </div>
+              <span class="small grey-text">According to Wallstreet</span>
+            </div>
+          </div>
+        </div>
+        <div class="user-call-to-action">
+          <button class="primary-btn" @click="onViewContacts">View contacts</button>
+        </div>
+      </div>
+
+      <div class="user-chart">
+        <h2>Chart!</h2>
+      </div>
     </div>
   </div>
   <div v-else class="user-redirect">
     <button @click="onRedirect">Please enter your name first</button>
-  </div>
-
-  <div class="move-list-container">
-    <MoveList :moves="getUser.user.moves" />
   </div>
 </template>
 
@@ -39,6 +59,9 @@ export default {
   methods: {
     onRedirect() {
       this.$router.push("/signup");
+    },
+    onViewContacts() {
+      this.$router.push("/contact");
     },
   },
   computed: {
