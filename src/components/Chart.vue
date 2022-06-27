@@ -1,26 +1,28 @@
 <template>
-  <Bar class="chart" :chart-data="chartData" height="400px" />
+  <Line class="chart" :chart-data="chartData" />
 </template>
 
 <script>
-import { Bar } from "vue-chartjs";
+import { Line } from "vue-chartjs";
 import {
   Chart as ChartJS,
   Title,
   Tooltip,
   Legend,
-  BarElement,
-  CategoryScale,
+  LineElement,
   LinearScale,
+  PointElement,
+  CategoryScale,
 } from "chart.js";
 
 ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
+  LineElement,
+  LinearScale,
+  PointElement,
+  CategoryScale
 );
 
 export default {
@@ -30,7 +32,7 @@ export default {
       required: true,
     },
   },
-  components: { Bar },
+  components: { Line },
   data() {
     return {
       chartData: {
@@ -41,6 +43,11 @@ export default {
           {
             label: this.coinData.name,
             backgroundColor: "gold",
+            fill: false,
+            borderColor: "gold",
+            tension: 0.1,
+            pointRadius: 0.1,
+            borderWidth: 2,
 
             data: this.coinData.values.map((value) => value.y),
           },
