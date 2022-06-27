@@ -34,10 +34,13 @@
         <div class="user-call-to-action">
           <button class="primary-btn" @click="onViewContacts">View contacts</button>
         </div>
+        <div class="move-list-container">
+          <MoveList :moves="getUser.user.moves" />
+        </div>
       </div>
 
       <div class="user-chart">
-        <h2>Chart!</h2>
+        <Chart v-if="marketPrice" :coinData="marketPrice" />
       </div>
     </div>
   </div>
@@ -48,12 +51,15 @@
 
 <script>
 import { bitcoinService } from "@/services/bitcoin.service.js";
+import Chart from "@/components/chart.vue";
+
 import MoveList from "@/components/MoveList.vue";
 export default {
   data() {
     return {
       user: null,
       rate: null,
+      marketPrice: null,
     };
   },
   methods: {
@@ -62,6 +68,10 @@ export default {
     },
     onViewContacts() {
       this.$router.push("/contact");
+    },
+    async loadData() {
+      this.marketPrice = await bitcoinService.getMarketPrice();
+      console.log("marketPrice", this.marketPrice);
     },
   },
   computed: {
@@ -79,9 +89,11 @@ export default {
   async created() {
     this.rate = await bitcoinService.getRate(1);
     this.user = this.$store.state.user.user;
+    this.loadData();
   },
   components: {
     MoveList,
+    Chart,
   },
 };
 </script>

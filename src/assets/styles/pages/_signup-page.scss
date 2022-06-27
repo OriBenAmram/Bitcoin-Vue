@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
+
 .signup-page {
     display: flex;
     height: 100vh;
@@ -10,7 +13,12 @@
         display: flex;
         flex-direction: column;
 
-        @include for-wide-layout { 
+        span {
+            color: beige;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @include for-wide-layout {
             margin: 114px 132px;
         }
 
@@ -25,7 +33,7 @@
             display: flex;
             flex-direction: column;
 
-            @include for-wide-layout { 
+            @include for-wide-layout {
                 width: 582px;
             }
 
@@ -40,8 +48,33 @@
                 margin-bottom: 16px;
             }
 
-            .primary-btn { 
+            .primary-btn-signup {
                 padding: 13px;
+
+                padding: 1.3em 3em;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 2.5px;
+                font-weight: 500;
+                color: #000;
+                background-color: #fff;
+                border: none;
+                border-radius: 45px;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                outline: none;
+            }
+
+            button:hover {
+                background: linear-gradient(90deg, #1199fa, #11d0fa);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+
+            button:active {
+                transform: translateY(-1px);
+
             }
         }
     }
@@ -49,8 +82,9 @@
     // Signup img
     .signup-background-img {
         display: none;
+
         @include for-wide-layout {
-            display: block; 
+            display: block;
             flex-grow: 1;
             background-repeat: no-repeat;
             background-size: cover;
