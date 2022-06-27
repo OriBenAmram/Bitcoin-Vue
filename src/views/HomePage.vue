@@ -32,7 +32,9 @@
           </div>
         </div>
         <div class="user-call-to-action">
-          <button class="primary-btn" @click="onViewContacts">View contacts</button>
+          <button class="primary-btn" @click="onViewContacts">
+            View contacts
+          </button>
         </div>
         <div class="move-list-container">
           <MoveList :moves="getUser.user.moves" />

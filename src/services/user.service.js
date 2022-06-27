@@ -22,12 +22,7 @@ function addMove(contact, amount) {
     if ((amount > 0) && (users[0].coins - amount >= 0)) {
 
         users[0].coins -= amount
-        const newMove = {
-            toId: contact._id,
-            to: contact.name,
-            at: Date.now(),
-            amount,
-        }
+        const newMove = _createMove(contact, amount)
         users[0].moves.unshift(newMove)
         console.log('users!!!', users)
         saveToStorage(STORAGE_KEY, users)
@@ -36,14 +31,38 @@ function addMove(contact, amount) {
     }
 }
 
+
+
 function signup(name) {
     const user = {
         name,
         coins: 100,
         _id: utilService.makeId(),
-        moves: []
+        moves: [{
+            "_id": "5a56640269f443a5d64b672hs",
+            "name": "Ori Ben Amram",
+            "email": "ori.bitcoin@gmail.com",
+            "phone": "+1 (968) 289-3824"
+        },
+        {
+            "_id": "5a56640269f443a5d64b46cz",
+            "name": "Daniel Shaked",
+            "email": "daniel.bitcoin@gmail.com",
+            "phone": "+1 (968) 982-3824"
+        },]
     }
     gUsers.unshift(user)
     saveToStorage(STORAGE_KEY, gUsers)
     return Promise.resolve(user)
+}
+
+
+
+function _createMove(contact, amount) {
+    return {
+        toId: contact._id,
+        to: contact.name,
+        at: Date.now(),
+        amount,
+    }
 }
