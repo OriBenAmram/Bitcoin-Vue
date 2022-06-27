@@ -1,11 +1,16 @@
-.contacts-options {
-   
-}
+.contact-options {
+    display: none;
 
-.active-contact-triggers {
-    display: flex;
-    flex-direction: row;
-    .primary-btn {
-        margin-right: 16px;
+    @include for-wide-layout {
+        display: block;
+    }
+
+
+    .active-contact-triggers {
+        display: flex;
+        flex-direction: row;
+        .primary-btn {
+            margin-right: 16px;
+        }
     }
 }
