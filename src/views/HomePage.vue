@@ -21,6 +21,8 @@
     <button @click="onRedirect">Please enter your name first</button>
   </div>
 
+  <Chart v-if="marketPrice" :coinData="marketPrice" />
+
   <div class="move-list-container">
     <MoveList :moves="getUser.user.moves" />
   </div>
@@ -28,17 +30,24 @@
 
 <script>
 import { bitcoinService } from "@/services/bitcoin.service.js";
+import Chart from "@/components/chart.vue";
+
 import MoveList from "@/components/MoveList.vue";
 export default {
   data() {
     return {
       user: null,
       rate: null,
+      marketPrice: null,
     };
   },
   methods: {
     onRedirect() {
       this.$router.push("/signup");
+    },
+    async loadData() {
+      this.marketPrice = await bitcoinService.getMarketPrice();
+      console.log("marketPrice", this.marketPrice);
     },
   },
   computed: {
@@ -56,9 +65,11 @@ export default {
   async created() {
     this.rate = await bitcoinService.getRate(1);
     this.user = this.$store.state.user.user;
+    this.loadData();
   },
   components: {
     MoveList,
+    Chart,
   },
 };
 </script>
