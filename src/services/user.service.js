@@ -12,9 +12,10 @@ const STORAGE_KEY = 'usersDB'
 
 function getUser() {
     const users = loadFromStorage('usersDB')
-    return users[0]
+    if (users) {
+        return users[0]
+    } else return null
 }
-
 function addMove(contact, amount) {
     let users = loadFromStorage(STORAGE_KEY)
     console.log('users', users)
@@ -36,20 +37,20 @@ function addMove(contact, amount) {
 function signup(name) {
     const user = {
         name,
-        coins: 100,
+        coins: 100000000,
         _id: utilService.makeId(),
-        moves: [{
+        moves: [_createMove({
             "_id": "5a56640269f443a5d64b672hs",
             "name": "Ori Ben Amram",
             "email": "ori.bitcoin@gmail.com",
             "phone": "+1 (968) 289-3824"
-        },
-        {
+        }, 50000),
+        _createMove({
             "_id": "5a56640269f443a5d64b46cz",
             "name": "Daniel Shaked",
             "email": "daniel.bitcoin@gmail.com",
             "phone": "+1 (968) 982-3824"
-        },]
+        }, 55000)]
     }
     gUsers.unshift(user)
     saveToStorage(STORAGE_KEY, gUsers)
