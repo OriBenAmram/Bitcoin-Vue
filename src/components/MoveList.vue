@@ -2,7 +2,7 @@
   <ul class="move-list clean-list" v-if="getMoves.length > 0">
     <li v-for="move in getMoves" :key="move.at">
       <div class="move-preview">
-        <div class="flex column">
+        <div class="flex column direct-description">
           <div>
             <p class="time-description">{{ getTime(move.at) }}</p>
             <h2 v-if="!title" class="move-to">To {{ move.to }}</h2>
@@ -10,10 +10,11 @@
           <p class="btn-value">{{ formatToCurrency(move.amount, "BTC") }}</p>
         </div>
         <div class="move-amount">
-            <p>{{ formatToCurrency((1 / rate) * move.amount) }}</p>
-            <h3>
-              status: <span :class="getStatusClass(move.status)"> {{move.status}}</span>
-            </h3>
+          <p>{{ formatToCurrency((1 / rate) * move.amount) }}</p>
+          <h3>
+            status:
+            <span >approved</span>
+          </h3>
         </div>
       </div>
     </li>
@@ -50,7 +51,7 @@ export default {
       else
         return this.moves.filter((move) => move.toId === this.title).reverse();
     },
-    
+
   },
   methods: {
     async getRate(coin) {
@@ -71,9 +72,10 @@ export default {
         .slice(0, 16)
         .replace(" ", ", ");
     },
-    getStatusClass(status) { 
-      if(status === 'pedding') return 'gold'
-      else if(status === 'approved') return 'green'
+    getStatusClass(status) {
+      if (status === 'pedding') return 'gold'
+      else if (status === 'approved') return 'green'
+      return 'gold'
     }
   },
   components: {},

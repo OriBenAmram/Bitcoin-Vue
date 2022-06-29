@@ -5,20 +5,43 @@
 
     .contact-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        @include for-normal-layout { 
+            flex-direction: row;
+        }
+        
         width: 100%;
         // background-color: pink;
 
         .contact-image {
-            width: 350px;
-            height: 350px;
-            background-color: green;
+            width: 100%;
+            margin-bottom: 50px;
             margin-right: 50px;
+            border-radius: 15px;
+            
+            @include for-narrow-layout { 
+                width: 300px;
+            }
+            
+            @include for-normal-layout { 
+                margin-bottom: 0px;
+                width: 300px;
+            }
+            
+            @include for-wide-layout { 
+                width: 350px;
+            }
+
+            img {
+                border-radius: 15px;
+            }
         }
         .contact-info {
             flex: 1;
             padding: 0px 10px;
-            .info-header { 
+            display: flex;
+            flex-direction: column;
+            .info-header {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -29,26 +52,36 @@
                 margin-bottom: 26px;
             }
 
-            .contact-name { 
+            .contact-name {
                 font-size: 24px;
             }
 
-            .contact-phone { 
+            .contact-phone {
                 font-size: 14px;
-                color: rgb(210, 210, 210);
+                color: #75839f;
             }
 
-            .contact-email { 
+            .contact-email {
                 font-size: 16px;
                 color: rgb(210, 210, 210);
+                margin-bottom: 16px;
+            }
+
+            .buttons-container { 
+                display: flex;
+                justify-content: space-between;
             }
         }
-
-        
     }
 
-    .details-moves { 
-        background-color: pink;
-        width: 400px;  
+    .details-moves {
+        flex: 1;
+        margin-top: 50px;
+        border-top: 1px solid grey;
+        padding: 20px 0;
+
+        h2 { 
+            padding: 0 20px;
+        }
     }
 }

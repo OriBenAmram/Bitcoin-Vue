@@ -13,7 +13,8 @@ const contacts = [
     "_id": "5a56640269f443a5d64b672hs",
     "name": "Ori Ben Amram",
     "email": "ori.bitcoin@gmail.com",
-    "phone": "+1 (968) 289-3824"
+    "phone": "+1 (968) 289-3824",
+    "imgUrl": "http://www.google.com/img/google.png",
   },
   {
     "_id": "5a56640269f443a5d64b46cz",

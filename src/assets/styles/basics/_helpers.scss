@@ -110,6 +110,12 @@ input {
         &.alone {
             border-radius: 4px;
         }
+
+        
+    }
+    .primary-btn { 
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
@@ -151,6 +157,12 @@ input {
 
 // Spans
 .grey-text { 
+    color: #75839f;
+}
+
+.delete-link { 
+    all: unset;
+    cursor: pointer;
     color: #75839f;
 }
 
