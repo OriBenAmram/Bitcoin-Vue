@@ -1,57 +1,66 @@
 <template>
-    <section class="edit-page">
-        <div v-if="contact" class="contact-edit-info">
-            <h1>{{ contact.name }}</h1>
-            <form @submit.prevent="save" class="contact-edit-form">
-                <p>
-                    contact's name:
-                    <span>{{ contact.name }}</span>
-                </p>
-                <input v-model="contact.name" type="text" />
-                <p>
-                    contact's mail:
-                    <span>{{ contact.email }}</span>
-                </p>
-                <input v-model="contact.email" type="text" />
-                <p>
-                    contact's phone:
-                    <span>{{ contact.phone }}</span>
-                </p>
-                <input v-model="contact.phone" type="number" />
-                <button>Save</button>
-            </form>
-        </div>
-        <div v-else>Loading...</div>
-    </section>
+  <div class="view-wrapper" @click="onGoBack">
+    <main
+      class="contact-edit main-layout view"
+      v-if="contact"
+      @click="(ev) => ev.stopPropagation()"
+    >
+      <button @click="onGoBack" class="close-btn">x</button>
+      <form class="edit-form" @submit="onSaveContact">
+        <input type="text" placeholder="Name" v-model="contact.name" />
+        <input type="email" placeholder="Email" v-model="contact.email" />
+        <input type="tel" placeholder="Phone" v-model="contact.phone" />
+        <button>save</button>
+      </form>
+    </main>
+  </div>
 </template>
 
 <script>
-import contactService from "../services/contact.service"
+import contactService from "@/services/contact.service.js";
 export default {
-    date() {
-        return {
-            contact: null
-        }
-    },
-    methods: {
-        async save() {
-            // await contactService.saveContact(this.contact)
-            await this.$store.dispatch({ type: 'saveContact', contact: this.contact })
-            this.$router.push('/contact')
-        }
-    },
-    computed: {
+  data() {
+    return {
+      contact: null,
+    };
+  },
 
+  created() {
+    if (!this.$store.getters.user) return this.$router.push("/signup");
+    this.loadContact();
+  },
+
+  methods: {
+    async loadContact() {
+      const { _id } = this.$route?.params;
+      if (!_id) return (this.contact = contactService.getEmptyContact());
+      const contact = await contactService.getContactById(_id);
+      console.log("contact", contact);
+      this.contact = JSON.parse(JSON.stringify(contact)); // Deep copy of contact to prevent mutations.
     },
-    async created() {
-        const _id = this.$route.params._id
-        if (_id) {
-            this.contact = await contactService.getContactById(_id)
-        } else {
-            this.contact = contactService.getEmptyContact()
-        }
+
+    async onSaveContact(ev) {
+      ev.preventDefault();
+      await this.$store.dispatch({
+        type: "saveContact",
+        contact: this.contact,
+      });
+      this.onGoBack();
     },
-    components: {
-    }
-}
+
+    onGoBack() {
+      this.$router.push("/contact");
+    },
+  },
+};
 </script>
+
+<style lang="scss">
+.contact-edit {
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+</style>

@@ -1,4 +1,6 @@
 <template>
+  <v-icon name="flag"></v-icon>
+
   <div class="signup-page">
     <section class="signup-info">
       <button @click="onQuickStart" class="small-link">Quick start</button>

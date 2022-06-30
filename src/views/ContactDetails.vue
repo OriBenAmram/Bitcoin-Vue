@@ -2,7 +2,10 @@
   <div v-if="contact" class="contact-details-page narrow-layout">
     <div class="contact-content">
       <div class="contact-image">
-        <img src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4" alt />
+        <img
+          src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4"
+          alt
+        />
       </div>
       <section class="contact-info">
         <div class="info-header">
@@ -22,8 +25,12 @@
         <!-- Buttons -->
         <div class="contact-options">
           <div class="buttons-container">
-            <button class="secondary-btn" @click="onEdit">Edit {{contact.name}}</button>
-            <button class="delete-link" @click="removeContact(contact._id)">Delete contact</button>
+            <button class="secondary-btn" @click="onEdit">
+              Edit {{ contact.name }}
+            </button>
+            <button class="delete-link" @click="removeContact(contact._id)">
+              Delete contact
+            </button>
           </div>
         </div>
       </section>
@@ -53,7 +60,7 @@ export default {
       else {
         return loggedInUser;
       }
-    }
+    },
   },
   methods: {
     back() {
@@ -65,13 +72,14 @@ export default {
       await this.$store.dispatch({ type: "removeContact", contactId });
       this.$router.push("/contact");
     },
-    onEdit() { 
+    onEdit() {
       this.$router.push(`/contact/edit/${contact._id}`);
-    }
+    },
   },
   async created() {
     const _id = this.$route.params._id;
     this.contact = await contactService.getContactById(_id);
+    console.log("contact", this.contact);
   },
   components: {
     TransferFund,

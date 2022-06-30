@@ -1,4 +1,6 @@
 import { utilService } from "./util.service";
+import { saveToStorage } from "./storage.service";
+const API_KEY = 'contactDB'
 
 export default {
   getContacts,
@@ -146,6 +148,7 @@ function sort(arr) {
 }
 
 function getContacts(filterBy = null) {
+
   return new Promise((resolve, reject) => {
     var contactsToReturn = contacts;
     if (filterBy && filterBy.term) {
