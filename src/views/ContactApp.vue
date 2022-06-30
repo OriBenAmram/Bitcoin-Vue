@@ -34,8 +34,9 @@ export default {
     },
     computed: {
         contactsToShow() {
-            const regex = new RegExp(this.filterBy.name, 'i')
-            return this.contacts.filter(contact => regex.test(contact.name))
+            return this.contacts.filter(contact => {
+                return (contact.name.toLowerCase() === this.filterBy.name.toLowerCase() || contact.phone.includes(this.filterBy.name))
+            })
         },
         contacts() {
             return this.$store.getters.contacts

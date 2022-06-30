@@ -11,25 +11,29 @@
     color: white;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
 
-
     .user-avatar {
         width: 50px;
         margin-right: 16px;
         border-radius: 50%;
     }
-    .contact-preview-details { 
+
+    .contact-preview-details {
         .contact-name {
-            font-size: 20px;
             margin: 0;
+            font-size: rem(14px);
+            margin-bottom: 5px;
+            @include for-narrow-layout {
+                margin-bottom: 0px;
+                font-size: rem(20px);
+            }
         }
         .contact-email {
             margin: 0;
-            font-size: 14px;
             color: rgb(186, 186, 186);
+            font-size: rem(10px);
+            @include for-narrow-layout {
+                font-size: rem(14px);
+            }
         }
     }
-
-
-
-  
 }

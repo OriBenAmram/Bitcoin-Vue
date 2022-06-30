@@ -6,6 +6,7 @@
         <div class="gradient-border"></div>
         <p class="input-trigger">Don't stay with any open checks....</p>
         <input
+        class="secondary-input"
             @input="filter"
             ref="filter"
             v-model="filterBy.name"

@@ -19,9 +19,6 @@ export default {
             }
         },
     methods: {
-        // removeContact(contactId) {
-        //     this.$emit('remove-contact', contactId)
-        // },
         onClickContact(contactId) {
             this.$router.push(`/contact/${contactId}`)
         }
