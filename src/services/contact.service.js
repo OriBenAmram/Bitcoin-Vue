@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { utilService } from "./util.service";
-import { saveToStorage, loadFromStorage } from "./storage.service";
+import { localStorageService } from "./storage.service";
 const API_KEY = 'contactDB'
 
 export default {
@@ -9,6 +9,7 @@ export default {
   deleteContact,
   saveContact,
   getEmptyContact,
+  getRandomContact
 
 }
 
@@ -100,12 +101,6 @@ const contacts = [
     "imgIdx": 11,
   },
   {
-    "_id": "5a5664028c096d08eeb13a8a",
-    "name": "Ollie Christian",
-    "email": "olliechristian@renovize.com",
-    "phone": "+1 (977) 419-3550"
-  },
-  {
     "_id": "5a5664026c53582bb9ebe9d1",
     "name": "Nguyen Walls",
     "email": "nguyenwalls@renovize.com",
@@ -172,10 +167,11 @@ function sort(arr) {
 function getContacts(filterBy = null) {
 
   return new Promise((resolve, reject) => {
-    let contactsFromDb = loadFromStorage(API_KEY) || contacts
+    let contactsFromDb = localStorageService.loadFromLStorage(API_KEY) || contacts
     if (filterBy && filterBy.term) {
       contactsToReturn = filter(filterBy.term)
     }
+    localStorageService.saveToLStorage(API_KEY, contactsFromDb)
     resolve(sort(contactsFromDb))
   })
 }
@@ -193,7 +189,7 @@ function deleteContact(id) {
     if (index !== -1) {
       contacts.splice(index, 1)
     }
-    saveToStorage(API_KEY, contacts)
+    localStorageService.saveToLStorage(API_KEY, contacts)
     resolve(contacts)
   })
 }
@@ -204,7 +200,7 @@ function _updateContact(contact) {
     if (index !== -1) {
       contacts[index] = contact
     }
-    saveToStorage(API_KEY, contacts)
+    localStorageService.saveToLStorage(API_KEY, contacts)
     resolve(contact)
   })
 }
@@ -214,7 +210,7 @@ function _addContact(contact) {
     contact._id = utilService.makeId()
     contact.imgIdx = contacts.length
     contacts.push(contact)
-    saveToStorage(API_KEY, contacts)
+    localStorageService.saveToLStorage(API_KEY, contacts)
     resolve(contact)
   })
 }
@@ -238,4 +234,16 @@ function filter(term) {
       contact.phone.toLocaleLowerCase().includes(term) ||
       contact.email.toLocaleLowerCase().includes(term)
   })
+}
+
+function getRandomContact() {
+  const contacts = localStorageService.loadFromLStorage(API_KEY)
+  console.log('contacts', contacts)
+  if (contacts) {
+    const randomIdx = utilService.getRandomInt(0, contacts.length)
+    console.log('contacts,randomIdx', contacts, randomIdx)
+    return contacts[randomIdx]
+  } else return null
+
+
 }

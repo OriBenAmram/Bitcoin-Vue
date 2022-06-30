@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-import { loadFromStorage, saveToStorage } from './storage.service'
+import { localStorageService } from './storage.service'
 
 export const bitcoinService = { getRate, getTradeVolume, getAvgBlockSize, getMarketPrice }
 
 async function getRate(value) {
-    const rateFromStorage = loadFromStorage('rate')
+    const rateFromStorage = localStorageService.loadFromLStorage('rate')
     if (rateFromStorage) return rateFromStorage
     const res = await axios.get(`https://blockchain.info/tobtc?currency=USD&value=${value}`)
-    saveToStorage('rate', res.data)
+    localStorageService.saveToLStorage('rate', res.data)
     return res.data
 }
 
@@ -25,9 +25,9 @@ async function getMarketPrice() {
 }
 
 async function _getCharts(chart) {
-    const chartFromStorage = loadFromStorage(chart)
+    const chartFromStorage = localStorageService.loadFromLStorage(chart)
     if (chartFromStorage) return chartFromStorage
     const res = await axios.get(`https://api.blockchain.info/charts/${chart}?timespan=5months&format=json&cors=true`)
-    saveToStorage(chart, res.data)
+    localStorageService.saveToLStorage(chart, res.data)
     return res.data
 }

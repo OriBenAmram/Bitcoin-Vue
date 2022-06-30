@@ -1,4 +1,4 @@
-import { saveToStorage, loadFromStorage } from "./storage.service";
+import { sessionStorageService } from "./storage.service";
 import { utilService } from "./util.service";
 
 export const userService = {
@@ -11,13 +11,13 @@ const gUsers = []
 const STORAGE_KEY = 'usersDB'
 
 function getUser() {
-    const users = loadFromStorage('usersDB')
+    const users = sessionStorageService.loadFromSessiontorage('usersDB')
     if (users) {
         return users[0]
     } else return null
 }
 function addMove(contact, amount) {
-    let users = loadFromStorage(STORAGE_KEY)
+    let users = sessionStorageService.loadFromSessiontorage('usersDB')
     console.log('users', users)
 
     if ((amount > 0) && (users[0].coins - amount >= 0)) {
@@ -26,7 +26,8 @@ function addMove(contact, amount) {
         const newMove = _createMove(contact, amount)
         users[0].moves.unshift(newMove)
         console.log('users!!!', users)
-        saveToStorage(STORAGE_KEY, users)
+        sessionStorageService.save
+        sessionStorageService.saveToSessionStorage(STORAGE_KEY, users)
 
         return users[0]
     }
@@ -55,7 +56,7 @@ function signup(name) {
         }, 55000)]
     }
     gUsers.unshift(user)
-    saveToStorage(STORAGE_KEY, gUsers)
+    sessionStorageService.saveToSessionStorage(STORAGE_KEY, gUsers)
     return Promise.resolve(user)
 }
 
