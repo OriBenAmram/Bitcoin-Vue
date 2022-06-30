@@ -1,5 +1,6 @@
 <template>
   <div v-if="contact" class="contact-details-page main-layout">
+    <h1>baba test</h1>
     <div class="contact-content">
       <div class="contact-image"></div>
       <section class="contact-info">
@@ -18,6 +19,7 @@
         </section>
         <!-- Buttons -->
         <div class="contact-options">
+          <h1>baba</h1>
           <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link>
           <button @click="removeContact(contact._id)">Delete</button>
         </div>
@@ -48,7 +50,7 @@ export default {
       else {
         return loggedInUser;
       }
-    }
+    },
   },
   methods: {
     back() {
@@ -64,6 +66,7 @@ export default {
   async created() {
     const _id = this.$route.params._id;
     this.contact = await contactService.getContactById(_id);
+    console.log("contact", this.contact);
   },
   components: {
     TransferFund,

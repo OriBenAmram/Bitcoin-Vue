@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
+import { BIconBatteryFull, BIconArrow90degDown, BIconBookmark } from 'bootstrap-icons-vue';
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
