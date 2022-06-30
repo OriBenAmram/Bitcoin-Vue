@@ -1,14 +1,14 @@
 <template>
-  <form class="transfer-form" @submit.prevent="onTransfer">
+  <form class="input-btn-form" @submit.prevent="onTransfer">
     <input
-      class="transfer-input"
       type="number"
       name="amount"
       placeholder="Please Enter Amount to transfer..."
       v-model="amount"
     />
-    <button class="btn-transfer" type="submit">Transfer</button>
+    <button class="primary-btn" type="submit">Transfer</button>
   </form>
+  <p class="grey-text">The transfer is in USD dollars, and would be transfered only when {{ contact.name.toLowerCase() }} will accept your payment.</p>
 </template>
 
 <script>

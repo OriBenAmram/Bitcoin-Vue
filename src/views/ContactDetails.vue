@@ -1,8 +1,12 @@
 <template>
-  <div v-if="contact" class="contact-details-page main-layout">
-    <h1>baba test</h1>
+  <div v-if="contact" class="contact-details-page narrow-layout">
     <div class="contact-content">
-      <div class="contact-image"></div>
+      <div class="contact-image">
+        <img
+          src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4"
+          alt
+        />
+      </div>
       <section class="contact-info">
         <div class="info-header">
           <button class="small-link" @click="back">Back</button>
@@ -17,18 +21,24 @@
         <section class="transfer-modal">
           <transfer-fund v-if="contact" :contact="contact" />
         </section>
+        <div class="flex full"></div>
         <!-- Buttons -->
         <div class="contact-options">
-          <h1>baba</h1>
-          <router-link :to="`/contact/edit/${contact._id}`">Edit</router-link>
-          <button @click="removeContact(contact._id)">Delete</button>
+          <div class="buttons-container">
+            <button class="secondary-btn" @click="onEdit">
+              Edit {{ contact.name }}
+            </button>
+            <button class="delete-link" @click="removeContact(contact._id)">
+              Delete contact
+            </button>
+          </div>
         </div>
       </section>
-      <section class="details-moves">
-        Contact moves
-        <!-- <move-list :title="contact._id" :moves="getUser.user.moves" /> -->
-      </section>
     </div>
+    <!-- <section class="details-moves">
+      <h2>Your transfers</h2>
+      <move-list :title="contact._id" :moves="getUser.user.moves" />
+    </section> -->
   </div>
   <p v-else>Loading...!</p>
 </template>
@@ -61,6 +71,9 @@ export default {
 
       await this.$store.dispatch({ type: "removeContact", contactId });
       this.$router.push("/contact");
+    },
+    onEdit() {
+      this.$router.push(`/contact/edit/${contact._id}`);
     },
   },
   async created() {
