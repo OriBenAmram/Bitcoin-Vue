@@ -2,10 +2,7 @@
   <div v-if="contact" class="contact-details-page narrow-layout">
     <div class="contact-content">
       <div class="contact-image">
-        <img
-          src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4"
-          alt
-        />
+        <img src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4" alt />
       </div>
       <section class="contact-info">
         <div class="info-header">
@@ -67,13 +64,13 @@ export default {
       this.$router.push("/contact");
     },
     async removeContact(contactId) {
-      console.log("contactId:", contactId);
-
       await this.$store.dispatch({ type: "removeContact", contactId });
       this.$router.push("/contact");
+      const userMsg = { header: `Deleted successfuly`, txt: `You just deleted ${this.contact.name} from your contact list` }
+      this.$store.dispatch({ type: "onSetUserMsg", userMsg });
     },
     onEdit() {
-      this.$router.push(`/contact/edit/${contact._id}`);
+      // this.$router.push(`/contact/edit/${contact._id}`);
     },
   },
   async created() {

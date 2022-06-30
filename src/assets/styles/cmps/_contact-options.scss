@@ -1,16 +1,33 @@
 .contact-options {
     display: none;
+    position: relative;
 
     @include for-wide-layout {
         display: block;
     }
-
 
     .active-contact-triggers {
         display: flex;
         flex-direction: row;
         .primary-btn {
             margin-right: 16px;
+        }
+    }
+}
+
+.add-contact-section {
+    .inputs-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+
+        input { 
+            margin-bottom: 5px;
+        }
+
+        button { 
+            margin: 16px 0;
+            padding: 13px;
         }
     }
 }

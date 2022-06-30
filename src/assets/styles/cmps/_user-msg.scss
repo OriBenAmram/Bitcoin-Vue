@@ -1,0 +1,36 @@
+.user-msg {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 350px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    background-color: white;
+    color: #0b1426;
+    padding: 10px;
+    border-radius: 3px;
+
+    h2, p {
+        text-align: left;
+    }
+
+    h2 { 
+        margin: 0 0 16px;
+        font-size: rem(20px);
+    }
+
+    p { 
+        margin: 0;
+        font-size: rem(14px);
+    }
+
+    button {
+        position: absolute;
+        right: 6px;
+        top: 1px;
+    }
+}

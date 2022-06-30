@@ -2,6 +2,7 @@ import { userService } from "../../services/user.service";
 export default {
     state: {
         user: userService.getUser(),
+        userMsg: null
     },
     mutations: {
         setUser(state, { user }) {
@@ -15,6 +16,9 @@ export default {
         },
         signout(state) {
             state.user = null;
+        },
+        setUserMsg(state, { userMsg }) { 
+            state.userMsg = userMsg
         }
     },
     actions: {
@@ -28,8 +32,12 @@ export default {
         async signout({ commit }) {
             commit({ type: 'signout' });
         },
+        onSetUserMsg({ commit }, { userMsg }) { 
+            commit({ type: 'setUserMsg', userMsg });
+        }
     },
     getters: {
-        user(state) { return state.user }
+        user(state) { return state.user },
+        userMsg(state) { return state.userMsg }
     }
 }

@@ -33,6 +33,7 @@ export default {
         async saveContact({ commit }, { contact }){
             try {
                 await contactService.saveContact(contact)
+                console.log('contact:', contact);
                 commit({ type: 'saveContact', contact })
             } catch (error) {
                 throw error

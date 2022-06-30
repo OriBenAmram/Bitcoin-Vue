@@ -22,7 +22,7 @@
           </div>
           <div class="btc-value">
             <p class="grey-text">Current BTC USD:</p>
-            <div class="flex column">
+            <div class="flex column align-end">
               <div class="flex">
                 <span class="describe-btn round small">live</span>
                 <h2>${{ rate }}</h2>

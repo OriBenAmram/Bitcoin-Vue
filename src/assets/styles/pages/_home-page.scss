@@ -48,6 +48,8 @@
         .user-info {
             flex: 1;
             width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .dry-details {
@@ -134,6 +136,9 @@
 
         .move-list-container {
             padding-right: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             .move-list-header {
                 padding: 20px 20px 0;
                 margin: 0;

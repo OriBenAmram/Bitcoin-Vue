@@ -38,16 +38,13 @@ export default {
       console.log("contact", contact);
       this.contact = JSON.parse(JSON.stringify(contact)); // Deep copy of contact to prevent mutations.
     },
-
     async onSaveContact(ev) {
       ev.preventDefault();
       await this.$store.dispatch({
         type: "saveContact",
         contact: this.contact,
       });
-      this.onGoBack();
     },
-
     onGoBack() {
       this.$router.push("/contact");
     },

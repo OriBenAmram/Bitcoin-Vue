@@ -1,7 +1,7 @@
 .move-list {
     width: 100%;
     padding: 20px;
-    height: 187px;
+    flex: 1;
     overflow-y: scroll;
     // In case there are no transfers - h2
     .no-moves-header {

@@ -30,3 +30,25 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
+
+.grey-close { 
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    color: #75839f;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.dark-blue-close { 
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    color: #0b1426;
+    font-size: 20px;
+    line-height: 20px;
+}
