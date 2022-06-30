@@ -1,11 +1,8 @@
 <template>
   <div v-if="contact" class="contact-details-page narrow-layout">
-    <div class="contact-content">
+    <div class="contact-cont ent">
       <div class="contact-image">
-        <img
-          src="https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4"
-          alt
-        />
+        <img :src="getAvatar(contact.imgIdx)" alt />
       </div>
       <section class="contact-info">
         <div class="info-header">
@@ -63,6 +60,9 @@ export default {
     },
   },
   methods: {
+    getAvatar(idx) {
+      return `https://xsgames.co/randomusers/assets/avatars/male/${idx}.jpg`;
+    },
     back() {
       this.$router.push("/contact");
     },

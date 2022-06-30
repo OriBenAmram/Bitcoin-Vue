@@ -1,25 +1,31 @@
 <template>
-    <img class="user-avatar" :src="getAvatar(contact._id)" />
-    <div class="contact-preview-details">
-        <h2 class="contact-name">{{ contact.name }}</h2>
-        <p class="contact-email">{{ contact.email }}</p>
-    </div>
+  <img class="user-avatar" :src="getAvatar(contact.imgIdx)" />
+  <div class="contact-preview-details">
+    <h2 class="contact-name">{{ contact.name }}</h2>
+    <p class="contact-email">{{ contact.email }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        contact: {
-            type: Object,
-            required: true,
-        }
+  props: {
+    index: {
+      type: Number,
+      required: true,
     },
-    methods: {
-        getAvatar(name) {
-            return `https://avatars.dicebear.com/api/adventurer/${name}.svg?b=%23f4f4f4`;
-        }
+    contact: {
+      type: Object,
+      required: true,
     },
-}
+  },
+
+  methods: {
+    getAvatar(idx) {
+      console.log("index", this.index);
+      return `https://xsgames.co/randomusers/assets/avatars/male/${idx}.jpg`;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
