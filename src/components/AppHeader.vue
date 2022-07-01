@@ -7,7 +7,7 @@
     ></div>
     <div class="header-content">
       <router-link class="logo" :class="{ disable: isSignupPage }" to="/home"
-        >BITcorn</router-link
+        >Mr.bitcoin</router-link
       >
       <!-- <nav class="nav-container" > -->
       <nav class="nav-container">
