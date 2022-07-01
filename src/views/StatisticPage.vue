@@ -46,13 +46,13 @@
       </div>
       <div class="side-data-container">
         <div class="secondary-chart-container">
-          <Chart v-if="avgBlockSize" :coinData="avgBlockSize" />
+          <Chart v-if="marketPrice" :coinData="marketPrice" />
+          <!-- <Chart v-if="avgBlockSize" :coinData="avgBlockSize" /> -->
         </div>
         <div class="move-list-container">
           <Move-list :moves="user.moves" />
         </div>
       </div>
-      <!-- <Chart v-if="marketPrice" :coinData="marketPrice" /> -->
     </section>
   </main>
 </template>

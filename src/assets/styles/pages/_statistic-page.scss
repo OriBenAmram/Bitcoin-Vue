@@ -66,24 +66,37 @@
 
         .main-chart-container { 
             max-width: 660px;
-
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
             #line-chart { 
-                height: 500px !important ;
-                width: 660px !important;
+                height: 460px !important ;
+                width: 620px !important;
             }
         }
     }
 
     // Right side
     .side-data-container { 
-        width: 30%;
-        border: 1px solid white;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
         .secondary-chart-container { 
-
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
         }
 
         .move-list-container { 
-
+            flex: 1;
+            margin-top: 26px;
+            .move-amount { 
+                p { 
+                    font-size: 14px;
+                }
+            }
         }
+
+        
     }
 }
