@@ -136,14 +136,20 @@
 
         .move-list-container {
             padding-right: 20px;
-            flex: 1;
+            // max-height: 220px;
+            height: 70%;
             display: flex;
             flex-direction: column;
+
+            @include for-narrow-layout {
+                max-height:90%;
+            }
+
             .move-list-header {
                 padding: 20px 20px 0;
                 margin: 0;
                 font-size: rem(16px);
-
+                
                 @include for-narrow-layout {
                     font-size: rem(20px);
                 }

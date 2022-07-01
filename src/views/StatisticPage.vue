@@ -35,7 +35,7 @@
               <v-icon name="ri-divide-fill" />
             </div>
             <div class="box-details">
-              <h2>Average transfer($)</h2>
+              <h2>Average($)</h2>
               <p>{{ getAvgTransform }}</p>
             </div>
           </div>

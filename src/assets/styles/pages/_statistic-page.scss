@@ -1,102 +1,154 @@
-    .statistic-page { 
-
-    .statistic-content { 
+.statistic-page {
+    .statistic-content {
         margin-top: 70px;
         display: flex;
         flex-direction: column;
         align-content: space-between;
         height: 80vh;
 
-        @include for-narrow-layout { 
+        @include for-wide-layout {
             flex-direction: row;
             justify-content: space-between;
-        }
-
-        @include for-wide-layout { 
-            // width: 1400px;
         }
     }
 
     // Main container
-    .main-data-container { 
+    .main-data-container {
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
-        width: 65%;
-        .small-data-container { 
-            width: 660px;
+
+        .small-data-container {
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 50px;
-            .box { 
-                background-color: white;
-                padding: 20px 10px;
+
+            @include for-normal-layout { 
+                width: 660px;
+            }
+
+            .box {
+                // background-color: white;
+                padding: 10px 4px;
                 border-radius: 15px;
-                color: #0b1426;
-                width: 300px;
-                height: 85px;
+                // color: #0b1426;
+                color: white;
+                border: 1px solid #75839f;
                 display: flex;
                 align-items: center;
-                .icon-container { 
-                    width: 60px;
-                    height: 60px;
-                    background-color: blue;
-                    margin-right: 10px;
+                
+                @include for-normal-layout { 
+                    padding: 20px 10px;
+                    width: 300px;
+                    height: 85px;
                 }
 
-                .box-details { 
-                    height: 60px;
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgb(17, 153, 250);
+                    width: 30px;
+                    height: 30px;
+                    // background-color: #ebf0fe;
+                    border: 0.5px solid #75839f;
+                    margin-right: 10px;
+                    border-radius: 15px;
+                    
+                    @include for-normal-layout { 
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
+                .box-details {
+                    height: 30px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    @include for-normal-layout { 
+                        height: 60px;
+                    }
                 }
 
-                h2 { 
-                    line-height: 20px;
-                    font-size: 20px;
+                h2 {
+                    line-height: 12px;
+                    font-size: 12px;
+                    
+                    @include for-normal-layout { 
+                        line-height: 20px;
+                        font-size: 20px;
+                    }
                 }
 
                 p {
                     margin: 0;
-                    font-size: grey;
+                    color: #75839f;
+                    font-size: 10px;
+
+                    @include for-normal-layout { 
+                        font-size: 14px;
+                    }
                 }
             }
         }
 
-        .main-chart-container { 
+        .main-chart-container {
             max-width: 660px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 20px;
-            #line-chart { 
-                height: 460px !important ;
-                width: 620px !important;
+            width: 100%;
+            
+            @include for-normal-layout { 
+                max-width: 660px;
+            }
+            
+            #line-chart {
+                height: 100% !important;
+                width: 100% !important;
+                @include for-normal-layout { 
+                    height: 500px !important;
+                    width: 660px !important;
+                }
             }
         }
     }
 
+    .main-chart-container {
+        max-width: 660px;
+        padding: 20px;
+        border-radius: 20px;
+        #line-chart {
+            height: 460px !important ;
+            width: 620px !important;
+        }
+    }
+
     // Right side
-    .side-data-container { 
-        width: 35%;
+    .side-data-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        .secondary-chart-container { 
-            background-color: white;
-            padding: 20px;
+        
+        @include for-wide-layout { 
+            width: 35%;
+
+        }
+        .secondary-chart-container {
+            padding: 0 20px 20px;
             border-radius: 20px;
         }
 
-        .move-list-container { 
+        .move-list-container {
+            // height: 562px;
             flex: 1;
-            margin-top: 26px;
-            .move-amount { 
-                p { 
+            .move-amount {
+                p {
                     font-size: 14px;
                 }
             }
+            .move-list { 
+                height: 100%;
+            }
         }
-
-        
     }
 }
