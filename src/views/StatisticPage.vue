@@ -35,7 +35,7 @@
               <v-icon name="ri-divide-fill" />
             </div>
             <div class="box-details">
-              <h2>Average transfer($)</h2>
+              <h2>Average($)</h2>
               <p>{{ getAvgTransform }}</p>
             </div>
           </div>
@@ -46,13 +46,13 @@
       </div>
       <div class="side-data-container">
         <div class="secondary-chart-container">
-          <Chart v-if="avgBlockSize" :coinData="avgBlockSize" />
+          <Chart v-if="marketPrice" :coinData="marketPrice" />
+          <!-- <Chart v-if="avgBlockSize" :coinData="avgBlockSize" /> -->
         </div>
         <div class="move-list-container">
           <Move-list :moves="user.moves" />
         </div>
       </div>
-      <!-- <Chart v-if="marketPrice" :coinData="marketPrice" /> -->
     </section>
   </main>
 </template>
