@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { FaFlag, RiZhihuFill, CoHamburgerMenu } from "oh-vue-icons/icons";
-addIcons(FaFlag, RiZhihuFill, CoHamburgerMenu);
+import { FaFlag, RiZhihuFill, CoHamburgerMenu,CoDollar,LaBitcoin,OiNumber,RiDivideFill } from "oh-vue-icons/icons";
+addIcons(FaFlag, RiZhihuFill, CoHamburgerMenu,CoDollar,LaBitcoin,OiNumber,RiDivideFill);
 
 import App from './App.vue'
 import router from './router'

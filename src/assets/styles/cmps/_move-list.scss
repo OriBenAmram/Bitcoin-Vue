@@ -1,8 +1,12 @@
 .move-list {
     width: 100%;
     padding: 20px;
-    flex: 1;
-    overflow-y: scroll;
+    height: 85%;
+    overflow-y: auto;
+
+    @include for-narrow-layout {
+        height: 65%;
+    }
     // In case there are no transfers - h2
     .no-moves-header {
         color: rgb(147, 210, 253);

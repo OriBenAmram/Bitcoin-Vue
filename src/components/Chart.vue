@@ -42,13 +42,14 @@ export default {
         datasets: [
           {
             label: this.coinData.name,
-            backgroundColor: "gold",
-            fill: false,
-            borderColor: "gold",
+            backgroundColor: "rgb(17, 153, 250)",
+            fill: true,
+            borderColor: "rgb(17, 153, 250)",
             tension: 0.1,
             pointRadius: 0.1,
             borderWidth: 2,
-
+            responsive: false,
+            maintainAspectRatio: false,
             data: this.coinData.values.map((value) => value.y),
           },
         ],

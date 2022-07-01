@@ -1,0 +1,89 @@
+    .statistic-page { 
+
+    .statistic-content { 
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        height: 80vh;
+
+        @include for-narrow-layout { 
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include for-wide-layout { 
+            // width: 1400px;
+        }
+    }
+
+    // Main container
+    .main-data-container { 
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        width: 65%;
+        .small-data-container { 
+            width: 660px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            .box { 
+                background-color: white;
+                padding: 20px 10px;
+                border-radius: 15px;
+                color: #0b1426;
+                width: 300px;
+                height: 85px;
+                display: flex;
+                align-items: center;
+                .icon-container { 
+                    width: 60px;
+                    height: 60px;
+                    background-color: blue;
+                    margin-right: 10px;
+                }
+
+                .box-details { 
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                h2 { 
+                    line-height: 20px;
+                    font-size: 20px;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: grey;
+                }
+            }
+        }
+
+        .main-chart-container { 
+            max-width: 660px;
+
+            #line-chart { 
+                height: 500px !important ;
+                width: 660px !important;
+            }
+        }
+    }
+
+    // Right side
+    .side-data-container { 
+        width: 30%;
+        border: 1px solid white;
+        .secondary-chart-container { 
+
+        }
+
+        .move-list-container { 
+
+        }
+    }
+}

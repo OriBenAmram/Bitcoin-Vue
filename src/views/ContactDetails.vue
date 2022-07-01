@@ -1,6 +1,6 @@
 <template>
   <div v-if="contact" class="contact-details-page narrow-layout">
-    <div class="contact-cont ent">
+    <div class="contact-content">
       <div class="contact-image">
         <img :src="getAvatar(contact.imgIdx)" alt />
       </div>

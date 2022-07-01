@@ -30,8 +30,6 @@ export default {
         this.timeoutId = setTimeout(() => {
             this.$store.dispatch({ type: "onSetUserMsg", msg: null });
         }, 2500);
-    },
-    unmounted() {
     }
 }
 </script>
