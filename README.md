@@ -60,7 +60,7 @@ Open http://localhost:3000 to view it in the browser.
 Just a taste of the mobile experience. I used different mixins, conditional rendering, and the "mobile first" approach. 
 You can also see that there is an interactive side menu for routing.
 
-<img src="src/assets/imgs/contact-mobile.jpg" width="30%" style="float: left; margin: 10px"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="30%" style="float: left; margin: 10px"/>
+<img src="src/assets/imgs/contact-mobile.jpg" width="30%" style="float: left; margin-right:10"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="30%" style="float: left; margin: 10px"/>
 
 ### Your contacts
 You can view your different contacts, filter them by number or name. 
