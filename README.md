@@ -52,5 +52,6 @@ Open http://localhost:3000 to view it in the browser.
 
 ## Showcase
 
-Home page
+### Home page
+
 ![Home page image](src/assets/imgs/home-dekstop.jpg "Homepage image")
