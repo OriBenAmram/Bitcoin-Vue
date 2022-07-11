@@ -1,7 +1,7 @@
 
 # Mr.bitcoin
-
-![Project image](src/assets/imgs/home-dekstop.jpg)
+[Take a look](https://oribenamram.github.io/Bitcoin-Vue "Github pages link")
+![Project image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
 ___
 
 ### Table of Contents
@@ -15,7 +15,7 @@ I decided to learn a new framework, because I want to keep expanding my knowladg
 
 And a bit about the project - a small App that was built in a few days, which provides the user a list of contacts that they can transfer money to, a basic CRUDL and some information about the value of theirs fake bank currency in Bitcoin.
 
-You are more than welcome to ***check it out*** (just enter your name and see it yourself - [right here](https://oribenamram.github.io/Bitcoin-Vue))
+You are more than welcome to ***check it out*** (just enter your name and see it yourself - [right here](https://oribenamram.github.io/Bitcoin-Vue "Github pages link"))
 
 
 
@@ -51,3 +51,6 @@ Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 ## Showcase
+
+Home page
+![Home page image](src/assets/imgs/home-dekstop.jpg "Homepage image")
