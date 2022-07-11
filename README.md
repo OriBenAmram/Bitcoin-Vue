@@ -58,8 +58,7 @@ Open http://localhost:3000 to view it in the browser.
 
 ### Some mobile!
 
-<img src="src/assets/imgs/contact-mobile.jpg" width="200" style="float: left; margin-right: 10px"/>
-<img src="src/assets/imgs/contact-mobile-nav.jpg" width="200" style="float: left; margin-right: 10px"/>
+<img src="src/assets/imgs/contact-mobile.jpg" width="300" style="float: left; margin-right: 10px"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="300" style="float: left; margin-right: 10px"/>
 
 ### Your contacts
 You can view your different contacts, filter them by number or name. 
