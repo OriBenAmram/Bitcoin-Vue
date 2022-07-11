@@ -57,8 +57,10 @@ Open http://localhost:3000 to view it in the browser.
 ![Signup page image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
 
 ### Some mobile!
+Just a taste of the mobile experience. I used different mixins, conditional rendering, and the "mobile first" approach. 
+You can also see that there is an interactive side menu for routing.
 
-<img src="src/assets/imgs/contact-mobile.jpg" width="300" height="570" style="float: left; margin-right: 30px"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="300" height="570" style="float: left; margin-right: 10px"/>
+<img src="src/assets/imgs/contact-mobile.jpg" width="30%" style="float: left; margin: 10px"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="30%" style="float: left; margin: 10px"/>
 
 ### Your contacts
 You can view your different contacts, filter them by number or name. 
