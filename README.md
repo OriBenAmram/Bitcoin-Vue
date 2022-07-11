@@ -7,7 +7,7 @@ ___
 ### Table of Contents
 - [Description](#description)
 - [Features](#features)
-- [Installation](#installation)
+- [Getting started](#getting-started)
 - [Showcase](#showcase)
 
 ## Description
@@ -55,6 +55,11 @@ Open http://localhost:3000 to view it in the browser.
 ### Sign-up page
 
 ![Signup page image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
+
+### Some mobile!
+
+<img src="src/assets/imgs/contact-mobile.jpg" width="200" style="float: left; margin-right: 10px"/>
+<img src="src/assets/imgs/contact-mobile-nav.jpg" width="200" style="float: left; margin-right: 10px"/>
 
 ### Your contacts
 You can view your different contacts, filter them by number or name. 
