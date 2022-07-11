@@ -1,6 +1,8 @@
 
 # Mr.bitcoin
-[Take a look](https://oribenamram.github.io/Bitcoin-Vue "Github pages link")
+An app I wrote with Vue, in which you can transfer money to your fake contacts, CRUDL them and get information about the current Bitcoin value, the market price and more!
+[Take a look, it's on Github pages](https://oribenamram.github.io/Bitcoin-Vue "Github pages link")
+
 ![Homepage image](src/assets/imgs/home-dekstop.jpg "Homepage image")
 ___
 

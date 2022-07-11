@@ -24,12 +24,8 @@ export default {
 
   methods: {
     getAvatar(idx) {
-      console.log("index", this.index);
       return `https://xsgames.co/randomusers/assets/avatars/male/${idx}.jpg`;
     },
   },
 };
 </script>
-
-<style lang="scss">
-</style>
