@@ -1,7 +1,7 @@
 
 # Mr.bitcoin
 [Take a look](https://oribenamram.github.io/Bitcoin-Vue "Github pages link")
-![Project image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
+![Homepage image](src/assets/imgs/home-dekstop.jpg "Homepage image")
 ___
 
 ### Table of Contents
@@ -52,6 +52,22 @@ Open http://localhost:3000 to view it in the browser.
 
 ## Showcase
 
-### Home page
+### Sign-up page
 
-![Home page image](src/assets/imgs/home-dekstop.jpg "Homepage image")
+![Signup page image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
+
+### Your contacts
+You can view your different contacts, filter them by number or name. 
+In addition, you can transform money, randomly, to one of your contacts by pressing on the "I'm flexible" button. You would get a message about the details right after, of course.
+
+![Contacts page image](src/assets/imgs/contact-dekstop-regular.jpg "Contacts page")
+
+### Add a new contact
+In the same page, you can click on the button "Add a new contact", and the right fields would appear.
+
+![Add a contact mode - image](src/assets/imgs/contact-dekstop-add.jpg "Add a contact mode")
+
+### Dashboard
+Here I present some of the user bank details, with charts about USD exchange trade value over the years, the Market place and their latest moves.
+
+![Dashboard image](src/assets/imgs/chart-dekstop.jpg "Dashboard")
