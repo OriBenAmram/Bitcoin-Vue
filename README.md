@@ -56,12 +56,6 @@ Open http://localhost:3000 to view it in the browser.
 
 ![Signup page image](src/assets/imgs/signup-desktop.jpg "Sign-up page")
 
-### Some mobile!
-Just a taste of the mobile experience. I used different mixins, conditional rendering, and the "mobile first" approach. 
-You can also see that there is an interactive side menu for routing.
-
-<img src="src/assets/imgs/contact-mobile.jpg" width="30%" style="float: left; margin-right:10"/><img src="src/assets/imgs/contact-mobile-nav.jpg" width="30%" style="float: left; margin: 10px"/>
-
 ### Your contacts
 You can view your different contacts, filter them by number or name. 
 In addition, you can transform money, randomly, to one of your contacts by pressing on the "I'm flexible" button. You would get a message about the details right after, of course.
@@ -72,6 +66,12 @@ In addition, you can transform money, randomly, to one of your contacts by press
 In the same page, you can click on the button "Add a new contact", and the right fields would appear.
 
 ![Add a contact mode - image](src/assets/imgs/contact-dekstop-add.jpg "Add a contact mode")
+
+### Some mobile!
+Just a taste of the mobile experience. I used different **mixins**, **conditional rendering**, and the **"mobile first"** approach. 
+You can also see that there is an interactive **side menu** for routing.
+
+<img src="src/assets/imgs/home-mobile.jpg" width="25%" style="float: left"/><img src="src/assets/imgs/contacts-mobile.jpg" width="25%" style="float: left;"/><img src="src/assets/imgs/statistic-mobile.jpg" width="25%" style="float: left;"/><img src="src/assets/imgs/signup-mobile.jpg" width="25%" style="float: left;"/>
 
 ### Dashboard
 Here I present some of the user bank details, with charts about USD exchange trade value over the years, the Market place and their latest moves.
