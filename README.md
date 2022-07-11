@@ -60,7 +60,7 @@ Open http://localhost:3000 to view it in the browser.
 You can view your different contacts, filter them by number or name. 
 In addition, you can transform money, randomly, to one of your contacts by pressing on the "I'm flexible" button. You would get a message about the details right after, of course.
 
-![Contacts page image](src/assets/imgs/contact-dekstop-regular.jpg "Contacts page")
+![Contacts page image](src/assets/imgs/contact-desktop-regular.jpg "Contacts page")
 
 ### Add a new contact
 In the same page, you can click on the button "Add a new contact", and the right fields would appear.
