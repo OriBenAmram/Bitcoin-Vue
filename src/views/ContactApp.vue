@@ -35,7 +35,7 @@ export default {
     computed: {
         contactsToShow() {
             return this.contacts.filter(contact => {
-                return (contact.name.toLowerCase() === this.filterBy.name.toLowerCase() || contact.phone.includes(this.filterBy.name))
+                return ((contact.name.toLowerCase().includes(this.filterBy.name.toLowerCase())) || contact.phone.includes(this.filterBy.name))
             })
         },
         contacts() {
