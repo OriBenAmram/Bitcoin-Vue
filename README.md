@@ -13,7 +13,7 @@ ___
 - [Showcase](#showcase)
 
 ## Description
-I decided to learn a new framework, because I want to keep expanding my knowladge and try new chalanges. That was ***my motivation.** 
+I decided to learn a new framework, because I want to keep expanding my knowladge and try new chalanges. That was **my motivation.** 
 
 And a bit about the project - a small App that was built in a few days, which provides the user a list of contacts that they can transfer money to, a basic CRUDL and some information about the value of theirs fake bank currency in Bitcoin.
 
